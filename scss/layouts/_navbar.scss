@@ -1,0 +1,392 @@
+@use "../base" as *;
+@use "../utilities" as *;
+@use "../vendors" as *;
+
+//////// Layout ////////
+
+.nav-bar {
+    position: relative;
+    display: none;
+    width: 100%;
+    @include color(background-1);
+
+    @include mq(l) {
+        display: block;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+.nav-list {
+    margin: 0 0;
+    padding: 0;
+
+    span {
+        height: 26px;
+        width: 26px;
+        margin-bottom: 8px;
+    }
+}
+
+.nav-box  {
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    @include color(nav-txt, color);
+}
+
+.nav-content {
+    font-size: 1.125rem;
+    line-height: 1;
+    width: 100%;
+    height: 100%;
+    padding: 19px 5px;
+    text-transform: uppercase;
+
+    small {
+        font-size: .625rem;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+}
+
+.nav-software-box {
+    position: relative;
+}
+
+.dd-triangle {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 34px 67px 0 67px;
+    z-index: 3;
+
+    @include mq(xl) {
+        border-width: 34px 84px 0 84px;
+    }
+}
+
+.dd-software-triangle {
+    border-color: #67809F transparent transparent transparent;
+}
+
+.dd-it-triangle {
+    border-color: #4183D7 transparent transparent transparent;
+}
+
+.dd-digital-triangle {
+    border-color: #2ECC71 transparent transparent transparent;
+}
+
+.dd-telecoms-triangle {
+    border-color: #D64541 transparent transparent transparent;
+}
+
+.dd-web-triangle {
+    border-color: #926FB1 transparent transparent transparent;
+}
+
+.dd-security-triangle {
+    border-color: #F62459 transparent transparent transparent;
+}
+
+.dd-training-triangle {
+    border-color: #CE4125 transparent transparent transparent;
+}
+
+.dd-title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.nav-dropdown {
+    display: none;
+    padding: 35px 0 50px 0;
+    @include color(nav-txt, color);
+
+    li {
+        font-size: 1.2rem;
+        padding: 12px 15px 12px 0;
+    }
+
+    span {
+        display: inline-block;
+    }
+    
+    a {
+        text-decoration: none;
+        @include color(nav-txt, color);
+
+        &:hover {
+            
+            span {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .container {
+        padding: 0;
+    }
+}
+
+.nav-software, 
+.nav-it, 
+.nav-digital, 
+.nav-telecoms, 
+.nav-web, 
+.nav-security, 
+.nav-training {
+    width: 100%;
+}
+
+.nav-software {
+   
+    &:hover {
+        @include color(software);
+
+        .nav-software-icon {
+            @include color(nav-icon-hv, color);
+        }
+
+        .nav-software-dropdown {
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            @include color(nav-software-dd);
+        }
+
+        .dd-software-triangle {
+            display: block;
+        }
+    }
+}
+
+.nav-it {
+    
+    &:hover {
+        @include color(it);
+
+        .nav-it-icon {
+            @include color(nav-icon-hv, fill);
+        }
+
+        .nav-it-dropdown {
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            @include color(nav-it-dd);
+        }
+
+        .dd-it-triangle {
+            display: block;
+        }
+    }
+}
+
+.nav-digital {
+    
+    &:hover {
+        @include color(digital);
+
+        .nav-digital-icon {
+            @include color(nav-icon-hv, fill);
+        }
+
+        .nav-digital-dropdown {
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            @include color(nav-digital-dd);
+        }
+
+        .dd-digital-triangle {
+            display: block;
+        }
+    }
+}
+
+.nav-telecoms {
+    
+    &:hover {
+        @include color(telecoms);
+
+        .nav-telecoms-icon {
+            @include color(nav-icon-hv, color);
+        }
+
+        .nav-telecoms-dropdown {
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            @include color(nav-telecoms-dd);
+        }
+
+        .dd-telecoms-triangle {
+            display: block;
+        }
+    }
+}
+
+.nav-web {
+    
+    &:hover {
+        @include color(web);
+
+        .nav-web-icon {
+            @include color(nav-icon-hv, color);
+        }
+
+        .nav-web-dropdown {
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            @include color(nav-web-dd);
+        }
+
+        .dd-web-triangle {
+            display: block;
+        }
+    }
+}
+
+.nav-security {
+    
+    &:hover {
+        @include color(security);
+
+        .nav-security-icon {
+            @include color(nav-icon-hv, fill);
+        }
+
+        .nav-security-dropdown {
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            @include color(nav-security-dd);
+        }
+
+        .dd-security-triangle {
+            display: block;
+        }
+    }
+}
+
+.nav-training {
+    
+    &:hover {
+        @include color(training);
+
+        .nav-training-icon {
+            @include color(nav-icon-hv, fill);
+        }
+
+        .nav-training-dropdown {
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            @include color(nav-training-dd);
+        }
+
+        .dd-training-triangle {
+            display: block;
+        }
+    }
+}
+
+//////// Nav Icons ////////
+
+.nav-icon {
+    font-size: 1.25rem;
+    height: 28px;
+    width: 28px;
+}
+
+.nav-software-icon {
+    font-size:1.6rem;
+    @include color(software, color);
+}
+
+.nav-it-icon {
+    @include color(it, fill);
+}
+
+.nav-digital-icon {
+    @include color(digital, fill);
+}
+
+.nav-telecoms-icon {
+    @include color(telecoms, color);
+}
+
+.nav-web-icon {
+    @include color(web, color);
+}
+
+.nav-security-icon {
+    @include color(security, fill);
+}
+
+.nav-training-icon {
+    @include color(training, fill);
+}
+
+//////// FlexBox ////////
+
+.nav-list {
+    display: flex;
+}
+
+.nav-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dd-row { 
+    display: flex;
+    flex-direction: row;
+}
+
+.dd-column { 
+    display: flex;
+    flex-direction: column;  
+    flex: 0 0 35%;
+}
+
+.nav-dropdown {
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    span {
+        flex: 1;
+    }
+
+    i {
+        flex-shrink: 0;
+    }
+}

@@ -1,0 +1,337 @@
+@use "../base" as *;
+@use "../utilities" as *;
+@use "../vendors" as *;
+
+//////// Layout ////////
+
+.inner {
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.header-row {
+    
+    i {
+        font-size: 24px;
+    }
+}
+
+.header-row {
+    padding-top: 7px;
+    padding-bottom: 14px;
+}
+
+.img-header {
+    min-width: 214.55px;
+    min-height: 37.36px;
+}
+
+.sb-content {
+    width: 565px;
+
+    @include mq(xl) {
+        width: 717px;
+    }
+}
+
+.search-bar-container-1 {
+    width: 100%;
+    transition: none;
+    background-color: rgba(0, 0, 0, .1);
+    outline: 1px solid hsla(0, 0%, 100%, .2);
+    border: 2px solid rgba(0, 0, 0, .1); 
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);  
+    @include color(hdr-sb, color);
+}
+
+.search-bar-container-2 {
+    width: 100%;
+    height: 56px;
+    @include color(hdr-sb, color);
+}
+
+.search-bar-1 {
+    margin-right: -40px;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.4px;
+    height: 100%;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    background-color: transparent;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+
+    &:focus {
+        outline: none;
+        box-shadow: none;       
+    }
+}
+
+.search-bar-2 {
+    margin-right: 0;
+    font-size: 14px;
+    line-height: 1.4px;
+    height: 100%;
+    width: 174px;
+    padding: 10px 15px;
+    border: 1px solid #E5E5E5;
+    border-color: #CCC;
+    border-radius: 0;
+
+    &:focus {
+        border: 1px solid #CCC;
+        border-radius: 0;
+        outline: none;
+        @include color(hdr-border-color, border-color);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(91, 192, 222, .6);
+    }
+
+    @include mq(xl) {
+        width: 100%;
+        margin-left: 20px;
+    }
+}
+
+//////// Button ////////
+
+.header-btn {
+    display: block;
+    height: 56px;
+    width: 63px;
+    margin-left: 5px;
+    border-radius: 4px;
+    padding: 5px 14px;
+    border: 1px solid #333645;
+    @include color(background-1);
+    cursor: pointer;
+
+    &:hover {
+        @include color(hdr-btn-hvr)
+    }
+
+    @include mq(m) {
+        margin-left: 20px;
+    }
+}
+
+.burger-line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    margin: 6px 0;
+    @include color(hdr-burger-line);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform-origin: center;
+}
+
+//////// Button Animation ////////
+
+.header-btn.open .burger-line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+    transition-delay: 0.2s;
+}
+
+.header-btn.open .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.header-btn.open .burger-line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+    transition-delay: 0.2s;
+}
+
+//////// Img and Logo styles ////////
+
+.search-icon-1 {
+    padding: 0 10px;
+    @include color(background-1, color);
+    background: transparent;
+    border: none;
+
+    i {
+        font-size: 20px;
+    }
+}
+
+.search-icon-2 {
+    width: 63px;
+    padding: 0 10px;
+    @include color(hdr-logo-2, color);
+    @include color(hdr-logo-2-bg);
+    border: 1px solid #999AA2;
+    border-radius: 0 3px 3px 0;
+
+    i {
+        font-size: 23px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        @include color(hdr-logo-2-bg-hvr);
+    }
+
+    @include mq(xl) {
+        width: 83px;
+    }
+}
+
+.search-icon-3 {
+    display: none;
+    width: 63px;
+    height: 56px;
+    padding: 0 10px;
+    margin-left: 20px;
+    @include color(hdr-logo-2, color);
+    @include color(hdr-logo-2-bg);
+    border: 1px solid #999AA2;
+    border-radius: 3px;
+
+    @include mq(l) {
+        display: block;
+    }
+
+    @include mq(xl) {
+        display: none;
+    }
+
+    i {
+        font-size: 23px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        @include color(hdr-logo-2-bg-hvr);
+    }
+}
+
+.mouse-icon {
+    display: none;
+    font-size: 1.125rem;
+    line-height: 46px;
+    width: 141px;
+    height: 56px;
+    padding: 0 10px;
+    text-transform: uppercase;
+    @include color(hdr-logo-2, color);
+    @include color(hdr-mouse-bg);
+    border: 1px solid #999AA2;
+    border-radius: 3px;
+
+    @include mq(l) {
+        display: block;
+    }
+
+    i {
+        font-size: 23px;
+    }
+
+    span {
+        margin-left: 10px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        @include color(hdr-mouse-hvr);
+    }
+}
+
+.plane-icon {
+    display: none;
+    font-size: 1.125rem;
+    line-height: 46px;
+    width: 149px;
+    height: 56px;
+    padding: 0 10px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    @include color(hdr-logo-2, color);
+    @include color(hdr-logo-2-bg);
+    border: 1px solid #999AA2;
+    border-radius: 3px;
+
+    @include mq(l) {
+        display: block;
+    }
+
+    i {
+        font-size: 23px;
+    }
+
+    span {
+        margin-left: 10px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        @include color(hdr-logo-2-bg-hvr);
+    }
+}
+
+.phone-icon {
+    display: inline-block;
+    margin-right: 20px;
+    @include color(background-1, color);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+        border-bottom-color: currentColor;
+    }
+
+    @include mq(m) {
+        display: none;
+    }
+}
+
+//////// Flexbox Layout //////// 
+
+.header-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar-container-1 {
+    display: flex;
+    flex-direction: row;
+
+    @include mq(m) {
+        display: none;
+    }
+}
+
+.search-bar-container-2 {
+    display: none;
+
+    @include mq(m) {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    @include mq(l) {
+        display: none;
+    }
+
+    @include mq(xl) {
+        width: 300px;
+        display: flex;
+    }
+}
+
+.sb-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

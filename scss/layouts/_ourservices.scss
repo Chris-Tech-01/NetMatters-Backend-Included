@@ -1,0 +1,532 @@
+@use "../base" as *;
+@use "../utilities" as *;
+@use "../vendors" as *;
+
+//////// Layouts & Styles ////////
+
+.our-services {
+
+    .section {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .btn {
+            @include color(os-btn-txt, color);
+        }
+
+        h1 {
+            position: relative;
+            top: 40px;
+
+            a {
+                @include color(main-txt-color, color);
+            }
+
+            @include mq(m) {
+                position: static;
+            }
+        }
+
+        h2 {
+            font-size: 2.7rem;
+            margin-bottom: 15px;
+            margin-top: 0;
+            @include color(main-txt-color, color);      
+        }
+
+        span {
+            @include color(main-txt-color, color);
+        }
+
+    } 
+}
+
+.h2 {
+    font-size: 1.3rem;
+    padding-bottom: 10px;
+    margin-bottom: 11px;
+}
+
+.h1-link {
+    font-size: 1.625rem;
+    font-weight: 600;
+    letter-spacing: .4px;
+
+    @include mq(m) {
+        font-size: 2.25rem;
+    }
+}
+
+.p {
+    font-size: .8125rem;
+    line-height: 1.375rem;
+    margin-bottom: 13px;
+}
+
+.service-list {
+    @include color(main-txt-color, color);
+}
+
+.block {
+    padding: 30px;
+}
+
+.icon-box {
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    margin: 0 auto 17px;
+}
+
+.icon {
+    font-size: 2rem;
+    line-height: 62px;
+    width: 32.41px;
+    height: 32px;
+}
+
+//////// Box's ////////
+
+.our-services-box {
+    margin-top: 30px;
+    text-align: center;
+}
+
+//////// Links ////////
+
+.our-services {
+    a {
+        text-decoration: none; // Used to remove underline from a hyperlink.
+    }
+}
+
+.h1-link {
+    line-height: 0;
+    border-bottom: 3px solid transparent;
+    text-decoration: none; // Used to remove underline from a hyperlink.
+
+    &:hover {
+        border-bottom: 3px solid $dark-blue;
+    }
+}
+
+//////// Box Hover Effects ////////
+
+.block {
+    position: relative;
+    top:0;
+    transition: .5s ease;
+    border: 1px solid $border;
+    border-radius: 15px;
+    box-shadow: $box-shadow;
+
+    &:hover {
+        border-color: transparent;
+        top: -10px;
+        transition: .5s ease;
+    }
+}
+
+
+.software {
+
+    .icon-box {
+        @include color(software);
+    }
+
+    .fa-laptop {
+        @include color(os-icon, color);
+    }
+   
+    &:hover {
+        @include color(software);
+        border-radius: 15px;
+
+        .btn-software {
+            @include color(software, color);
+            @include color(os-hov-effect);
+        }
+
+        .p, .h2 {
+            @include color(os-hov-effect, color);
+        }
+
+        .icon-box {
+           @include color(os-icon);
+        }
+
+        .fa-laptop {
+            @include color(software, color);
+        }
+    }
+  
+}
+
+.it {
+
+    .icon-box {
+        @include color(it);
+    }
+
+    .icon {
+        @include color(os-icon, fill);
+    }
+   
+    &:hover {
+        @include color(it);
+        border-radius: 15px;
+
+        .btn-it {
+            @include color(it, color);
+            @include color(os-hov-effect); 
+        }
+
+        .p, .h2 {
+            @include color(os-hov-effect, color);
+        }
+
+        .icon-box {
+            @include color(os-icon);
+        }
+
+        .icon {
+            @include color(it, fill);
+        }
+    }
+  
+}
+
+.digital {
+
+    .icon-box {
+        @include color(digital);
+    }
+
+    .icon {
+        @include color(os-icon, fill);
+    }
+   
+    &:hover {
+        @include color(digital);
+        border-radius: 15px;
+
+        .btn-digital {
+            @include color(digital, color);
+            @include color(os-hov-effect);
+
+            @include mq(xl) {
+                margin-top: 24px;
+            }
+        }
+
+        .p, .h2 {
+            @include color(os-hov-effect, color);
+        }
+
+        .icon-box {
+            @include color(os-icon);
+        }
+
+        .icon {
+            @include color(digital, fill);
+        }
+    }
+  
+}
+
+.telecoms {
+
+    .icon-box {
+        @include color(telecoms);
+    }
+
+    .fa-phone-volume {
+        @include color(os-icon, color);
+    }
+   
+    &:hover {
+        @include color(telecoms);
+        border-radius: 15px;
+
+        .btn-telecoms {
+            @include color(telecoms, color);
+            @include color(os-hov-effect);
+        }
+
+        .p, .h2 {
+            @include color(os-hov-effect, color);
+        }
+
+        .icon-box {
+            @include color(os-icon);
+        }
+
+        .fa-phone-volume {
+            @include color(telecoms, color);
+        }
+    }
+  
+}
+
+.web {
+
+    .icon-box {
+        @include color(web);
+    }
+
+    .fa-code {
+        @include color(os-icon, color);
+    }
+   
+    &:hover {
+        @include color(web);
+        border-radius: 15px;
+
+        .btn-web {
+            @include color(web, color);
+            @include color(os-hov-effect); 
+        }
+
+        .p, .h2 {
+            @include color(os-hov-effect, color);
+        }
+
+        .icon-box {
+            @include color(os-icon);
+        }
+
+        .fa-code {
+            @include color(web, color);
+        }
+    }
+  
+}
+
+.security {
+
+    .icon-box {
+        @include color(security);
+    }
+
+    .icon {
+        @include color(os-icon, fill);
+    }
+   
+    &:hover {
+        @include color(security);
+        border-radius: 15px;
+
+        .btn-security {
+            @include color(security, color);
+           @include color(os-hov-effect); 
+        }
+
+        .p, .h2 {
+            @include color(os-hov-effect, color);
+        }
+
+        .icon-box {
+            @include color(os-icon);
+        }
+
+        .icon {
+            @include color(security, fill);
+        }
+    }
+  
+}
+
+.training {
+
+    .icon-box {
+        @include color(training);
+    }
+
+    .icon {
+        @include color(os-icon, fill);
+    }
+   
+    &:hover {
+        @include color(training);
+        border-radius: 15px;
+
+        .btn-training {
+            @include color(training, color);
+            @include color(os-hov-effect); 
+        }
+
+        .p, .h2 {
+            @include color(os-hov-effect, color);
+        }
+
+        .icon-box {
+            @include color(os-icon);
+        }
+
+        .icon {
+            @include color(training, fill);
+        }
+    }
+  
+}
+
+//////// Buttons ////////
+
+.btn {
+    height: 47px;
+    width: 129.73px;
+    padding: 5px 15px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+.btn-software {
+    @include color(software-2);
+}
+
+.btn-it {
+    @include color(it);
+}
+
+.btn-digital {
+    @include color(digital);
+
+    @include mq(xl) {
+        margin-top: 24px;
+    }
+}
+
+.btn-telecoms {
+    @include color(telecoms);
+}
+
+.btn-web {
+    @include color(web);
+}
+
+.btn-security {
+    @include color(security);
+}
+
+.btn-training {
+    @include color(training);
+}
+
+//////// FlexBox Layout ////////
+
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@include mq(xl) { // Fix,s my shrinking issue. Will also have to push the button down with this method.
+        .our-services-box {
+        display: flex;
+        align-items: stretch; 
+    }
+}
+
+//////// Grid Layout ////////
+
+.our-services-h1 {
+    display: grid;
+    justify-self: center;
+    grid-area: our-services-h1;
+    white-space: nowrap;
+
+    @include mq(m) {
+        display: initial;
+        margin-bottom: 20px;
+        justify-self: end;
+    }
+}
+
+.our-services-h2 {
+    grid-area: our-services-h2;
+}
+
+.our-services-box-1 {
+    grid-area: our-services-box-1;
+}
+
+.our-services-box-2 {
+    grid-area: our-services-box-2;
+}
+
+.our-services-box-3 {
+    grid-area: our-services-box-3;
+}
+
+.our-services-box-4 {
+    grid-area: our-services-box-4;
+}
+
+.our-services-box-5 {
+    grid-area: our-services-box-5;
+}
+
+.our-services-box-6 {
+    grid-area: our-services-box-6;
+}
+
+.our-services-box-7 {
+    grid-area: our-services-box-7;
+}
+
+.service {
+    display: grid;
+    grid-template-areas: 
+    "our-services-h2"
+    "our-services-box-1"
+    "our-services-box-2"
+    "our-services-box-3"
+    "our-services-box-4"
+    "our-services-box-5"
+    "our-services-box-6"
+    "our-services-box-7"
+    "our-services-h1";
+    grid-template-columns: 1fr;
+
+    @include mq(m) {
+        display: grid;
+        column-gap: 30px;
+        grid-template-areas: 
+        "our-services-h2 our-services-h1"
+        "our-services-box-1 our-services-box-1"
+        "our-services-box-2 our-services-box-2"
+        "our-services-box-3 our-services-box-3"
+        "our-services-box-4 our-services-box-5"
+        "our-services-box-6 our-services-box-7";
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(l) {
+        display: grid;
+        column-gap: 30px;
+        grid-template-areas: 
+        "our-services-h2 our-services-h2 our-services-h2 our-services-h1 our-services-h1 our-services-h1"
+        "our-services-box-1 our-services-box-1 our-services-box-2 our-services-box-2 our-services-box-3 our-services-box-3"
+        "our-services-box-4 our-services-box-4 our-services-box-4 our-services-box-5 our-services-box-5 our-services-box-5"
+        "our-services-box-6 our-services-box-6 our-services-box-6 our-services-box-7 our-services-box-7 our-services-box-7";
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include mq(xl) {
+        display: grid;
+        column-gap: 30px;
+        grid-template-areas: 
+        "our-services-h2 our-services-h2 our-services-h2 our-services-h2 our-services-h2 our-services-h2 our-services-h1 our-services-h1 our-services-h1 our-services-h1 our-services-h1 our-services-h1"
+        "our-services-box-1 our-services-box-1 our-services-box-1 our-services-box-1 our-services-box-2 our-services-box-2 our-services-box-2 our-services-box-2 our-services-box-3 our-services-box-3 our-services-box-3 our-services-box-3"
+        "our-services-box-4 our-services-box-4 our-services-box-4 our-services-box-5 our-services-box-5 our-services-box-5 our-services-box-6 our-services-box-6 our-services-box-6 our-services-box-7 our-services-box-7 our-services-box-7";
+        grid-template-columns: repeat(12, 1fr);
+    }
+}

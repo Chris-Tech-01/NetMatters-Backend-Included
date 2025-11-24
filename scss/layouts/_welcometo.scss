@@ -1,0 +1,198 @@
+@use "../base" as *;
+@use "../utilities" as *;
+@use "../vendors" as *;
+
+//////// Layout ////////
+
+.welcome-to {
+    @include color(background-1); 
+    @include color(wt-txt-color, color); 
+
+    h2 {
+        margin-bottom: 40px; 
+        margin-top: 0;
+    }
+
+    p {
+        line-height: 1.875rem; 
+        margin-top: 0;
+        margin-bottom: 25px; 
+    }
+
+    a {
+        text-decoration: none; 
+        @include color(wt-txt-color, color); 
+    }
+}
+
+.welcome-to-column {
+    padding: 0 12px;
+}
+
+a.strong-paragraph {
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.welcome-to-row {
+    padding: 50px 0;
+}
+
+.strong-title {
+        font-size: 2.25rem; 
+        font-weight: 600; 
+    }
+
+.strong-paragraph {
+    font-weight: 600; 
+}
+
+.welcome-to-col-1 {
+    p {
+        font-size: 1rem; 
+    }
+}
+
+.client-quote {
+    font-weight: 600; 
+    font-size: 1.3rem; 
+    font-style: italic; 
+}
+
+.client-quote-author {
+    font-weight: 600; 
+    @include color(client, color); 
+}
+
+.client {
+   font-weight: 600;
+   font-size: 1.1rem;
+}
+
+//////// Buttons ////////
+
+.welcome-to-btn {
+    display: inline-flex; 
+    font-size: 20px; 
+    padding: 10px 30px; 
+    border-radius: 6px; 
+    border: 1px solid transparent; 
+    text-transform: uppercase; 
+    align-items: center;
+
+    i {
+        margin-left: 12px;
+        margin-right: -4px;
+    }
+}
+
+.welcome-to-buttons a:first-child {
+    width: 270.17px; 
+    height: 57px; 
+    margin-bottom: 17px; 
+    margin-right: 6px;
+
+    @include mq(l) {
+        margin-top: 8px;
+    }
+
+    @include mq(xl) {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.welcome-to-btn-1 {
+    width: 225.86px; 
+    height: 57px; 
+    margin-bottom: 50px; 
+    @include color(wt-btn-bg-1); 
+
+    &:hover {
+        @include color(wt-btn-bg-hv-1); 
+    }
+
+    @include mq(l) {
+        margin-bottom: 0;
+    }
+}
+
+.welcome-to-btn-2 {
+    width: 263.19px; 
+    height: 55px; 
+    margin-top: 20px; 
+    margin-right: 8px; 
+    @include color(wt-btn-bg-2); 
+
+    &:hover {
+        @include color(wt-btn-bg-hv-2); 
+    }
+}
+
+.welcome-to-btn-3 {
+    width: 294.05px; 
+    height: 55px; 
+    margin-top: 20px; 
+    @include color(wt-btn-bg-3); 
+
+    &:hover {
+        @include color(wt-btn-bg-hv-3); 
+    }
+}
+
+//////// Star Styles ////////
+
+.star-icon {
+    width: 46.84px;
+    height: 51px;
+    margin-bottom: 25px;
+    @include color(star, fill); 
+}
+
+.star {
+    margin-left: 4px;
+}
+
+//////// Flexbox Layout ////////
+
+.welcome-to-row {
+    display: flex; 
+    flex-direction: column; 
+
+    @include mq(l) {
+        flex-direction: row;
+    }
+}
+
+.star-row {
+    display: flex;
+}
+
+.welcome-to-column {
+    flex: 1;
+}
+
+.welcome-to-col-1 { 
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-to-col-2 {
+    display: flex; 
+    flex-direction: column; 
+
+    h2 {
+       margin-top: 0; 
+       align-self: flex start; 
+    }
+}
+
+.middle-buttons {
+
+    @include mq(xl) {
+        display: flex;
+        flex-direction: row;
+    }
+}
