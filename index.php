@@ -12,14 +12,14 @@
 
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="css/style.css">
-        <script src="https://kit.fontawesome.com/b711cced4c.js" crossorigin="anonymous"></script> <!-- Links my fonts from FontAwesome -->
+        <script src="https://kit.fontawesome.com/b711cced4c.js" crossorigin="anonymous"></script> <!-- Links my icons from FontAwesome -->
 
         <title>
             Full Service Digital Agency | Cambridgeshire &amp; Norfolk | Netmatters
         </title>
     </head>
 
-    <php>
+    <body>
         <div id="cookie-overlay">
             <div class="cookie-app">
                 <div class="cookie-content">
@@ -649,6 +649,6 @@
             </div>            
             <?php include 'includes/footer.php'; ?>
         </div>              
-    <script type="module" src="JS/main.js"></script>
+        <script type="module" src="JS/main.js"></script>
     </body>
 </html>

@@ -2,7 +2,7 @@
     <div class="sidebar-small">
         <ul>
             <li>
-                <a href="#" class="sidebar-contact-us">Contact Us</a>
+                <a href="contact.php" class="sidebar-contact-us">Contact Us</a>
             </li> 
             <li class="sidebar-small-content">
                 <a href="#" class="sidebar-icon-box">

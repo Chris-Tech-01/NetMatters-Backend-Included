@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="header">
                     <div class="header-row">
-                        <a href="#">
+                        <a href="index.php">
                         <img class="img-header" src="images/f-logo.png" alt="Netmatters Logo">
                         </a>
                         <div class="sb-content">
@@ -14,9 +14,9 @@
                             <button class="mouse-icon">
                                 <i class="fa-solid fa-computer-mouse"></i><span>Support</span>
                             </button>
-                            <button class="plane-icon">
+                            <a class="plane-icon" href="contact.php">
                                 <i class="fa-regular fa-paper-plane"></i><span>Contact</span>
-                            </button>
+                            </a>
                             <button class="search-icon-3">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>

@@ -253,15 +253,12 @@
     height: 56px;
     padding: 0 10px;
     margin-left: 20px;
+    text-decoration: none;
     text-transform: uppercase;
     @include color(hdr-logo-2, color);
     @include color(hdr-logo-2-bg);
     border: 1px solid #999AA2;
     border-radius: 3px;
-
-    @include mq(l) {
-        display: block;
-    }
 
     i {
         font-size: 23px;
@@ -334,4 +331,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+.plane-icon {
+    @include mq(l) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
